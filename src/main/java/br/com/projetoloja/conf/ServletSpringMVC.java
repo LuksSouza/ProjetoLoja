@@ -2,6 +2,19 @@ package br.com.projetoloja.conf;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * Implementação do Servlet do Spring
+ * 
+ * getRootConfigClasses - 
+ * 
+ * getServletConfigClasses - Mapeia as classes com as configurações para o uso do SpringMVC
+ * 
+ * getServletMappings - Mapeia as URIs que o Servlet irá atender
+ * 
+ * @author estudo
+ *
+ */
+
 public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
@@ -11,12 +24,12 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class[] {AppWebConfiguration.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return null;
+		return new String[] {"/"};
 	}
 
 }
