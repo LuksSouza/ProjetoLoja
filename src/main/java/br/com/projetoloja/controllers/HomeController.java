@@ -18,6 +18,9 @@ public class HomeController {
 	@RequestMapping("/")
 	public String index() {
 		System.out.println("Chegou no controlador do Sprinv MVC!");
+		System.out.println("Atendendo requisição da chamada a raiz do projeto");
+		System.out.println("Retornando a view 'home' para o container...");
+		
 		return "home";
 	}
 	
