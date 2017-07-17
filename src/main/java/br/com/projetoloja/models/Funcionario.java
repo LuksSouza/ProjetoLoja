@@ -1,7 +1,6 @@
 package br.com.projetoloja.models;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -10,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import br.com.projetoloja.util.ManipulacaoDataHora;
 
 @Entity
 public class Funcionario {
@@ -20,7 +21,7 @@ public class Funcionario {
 	private String nome;
 	
 	@Temporal(TemporalType.DATE)
-	private Calendar data_nasscimento;
+	private Date data_nascimento;
 	private BigDecimal salario;
 	private String cpf;
 
@@ -40,12 +41,12 @@ public class Funcionario {
 		this.nome = nome;
 	}
 
-	public Calendar getData_nasscimento() {
-		return data_nasscimento;
+	public Date getData_nascimento() {
+		return data_nascimento;
 	}
 
-	public void setData_nasscimento(Calendar data_nasscimento) {
-		this.data_nasscimento = data_nasscimento;
+	public void setData_nascimento(Date data_nascimento) {
+		this.data_nascimento = data_nascimento;
 	}
 
 	public BigDecimal getSalario() {
@@ -66,7 +67,7 @@ public class Funcionario {
 
 	@Override
 	public String toString() {
-		return "Funcionario [nome=" + nome + ", data_nasscimento=" + data_nasscimento + ", salario=" + salario
+		return "Funcionario [nome=" + nome + ", data_nascimento=" + ManipulacaoDataHora.formatarData(data_nascimento) + ", salario=" + salario
 				+ ", cpf=" + cpf + "]";
 	}
 

@@ -10,7 +10,7 @@
 	<h1>Teste Cadastro tabela Marca</h1>
 	<form action="/ProjetoLoja/cadastrarMarca" method="post">
 		<div>
-			<label>Nome da Marca:</label> <input type="text" name="marca">
+			<label>Nome da Marca:</label> <input type="text" name="descricao">
 		</div>
 		<button type="submit">Cadastrar Marca</button>
 	</form>

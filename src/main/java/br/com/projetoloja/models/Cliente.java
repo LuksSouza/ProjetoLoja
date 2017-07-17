@@ -1,6 +1,5 @@
 package br.com.projetoloja.models;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -9,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import br.com.projetoloja.util.ManipulacaoDataHora;
 
 @Entity
 public class Cliente {
@@ -20,7 +21,7 @@ public class Cliente {
 	private String cpf;
 	
 	@Temporal(TemporalType.DATE)
-	private Calendar data_nascimento;
+	private Date data_nascimento;
 
 	public Integer getId() {
 		return id;
@@ -46,17 +47,17 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public Calendar getData_nascimento() {
+	public Date getData_nascimento() {
 		return data_nascimento;
 	}
 
-	public void setData_nascimento(Calendar data_nascimento) {
+	public void setData_nascimento(Date data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", data_nascimento=" + data_nascimento + "]";
+		return "Cliente [nome=" + nome + ", cpf=" + cpf + ", data_nascimento=" + ManipulacaoDataHora.formatarData(data_nascimento)	 + "]";
 	}
 
 }

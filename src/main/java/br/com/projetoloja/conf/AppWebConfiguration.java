@@ -6,6 +6,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import br.com.projetoloja.controllers.HomeController;
+import br.com.projetoloja.daos.ClienteDAO;
 
 /**
  * @EnableWebMVC - Indica para o Spring que será utilizado o recurso Web MVC dele
@@ -19,7 +20,7 @@ import br.com.projetoloja.controllers.HomeController;
  */
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class})
+@ComponentScan(basePackageClasses={HomeController.class, ClienteDAO.class})
 public class AppWebConfiguration {
 
 	/**

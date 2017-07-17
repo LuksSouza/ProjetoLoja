@@ -16,8 +16,7 @@
 			<label>CPF:</label> <input type="text" name="cpf" />
 		</div>
 		<div>
-			<label>Data de Nascimento</label> <input type="text"
-				name="data_nascimento" />
+			<label>Data de Nascimento:</label> <input type="datetime" name="data_nascimento" />
 		</div>
 		<button type="submit">Cadastrar</button>
 	</form>
