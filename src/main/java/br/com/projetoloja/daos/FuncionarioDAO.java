@@ -1,5 +1,7 @@
 package br.com.projetoloja.daos;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -17,5 +19,9 @@ public class FuncionarioDAO {
 	
 	public void gravar(Funcionario funcionario) {
 		this.manager.persist(funcionario);
+	}
+
+	public List<Funcionario> listar() {
+		return manager.createQuery("SELECT f FROM Funcionario f").getResultList();
 	}
 }

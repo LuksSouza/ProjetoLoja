@@ -1,5 +1,7 @@
 package br.com.projetoloja.daos;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -17,5 +19,9 @@ public class MarcaDAO {
 	
 	public void gravar(Marca marca) {
 		this.manager.persist(marca);
+	}
+
+	public List<Marca> listar() {
+		return manager.createQuery("SELECT m FROM Marca m").getResultList();
 	}
 }

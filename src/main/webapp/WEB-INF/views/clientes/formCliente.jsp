@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Teste Cadastro tabela Cliente:</h1>
-	<form action="/ProjetoLoja/cadastrarCliente" method="post">
+	<form action="/ProjetoLoja/clientes/cadastrarCliente" method="post">
 		<div>
 			<label>Nome:</label> <input type="text" name="nome" />
 		</div>
